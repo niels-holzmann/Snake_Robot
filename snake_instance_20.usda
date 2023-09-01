@@ -1,0 +1,1052 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    upAxis = "Z"
+)
+
+def Xform "Root"
+{
+    def Xform "snake_instanceable" (
+        apiSchemas = None
+        instanceable = false
+    )
+    {
+        token ui:displayGroup = "Material Graphs"
+        token ui:displayName = "snake_instanceable"
+        int ui:order = 1024
+        float3 xformOp:rotateXYZ = (0, -0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+
+        def Xform "front_left_leg_1" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0.6, 0.6, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_1" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_1"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        def Xform "front_left_leg_2" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (1.0, 1.0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_2" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_2"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        def Xform "front_left_leg_3" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (1.4, 1.4, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_3" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_3"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        def Xform "front_left_leg_4" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (1.8, 1.8, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_4" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_4"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        def Xform "front_left_leg_5" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (2.2, 2.2, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_5" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_5"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        def Xform "front_left_leg_6" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (2.6, 2.6, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_6" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Capsule "left_leg_geom_6"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+        def "joints"
+        {
+
+            //modified code
+            def PhysicsRevoluteJoint "front_left_leg_1" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_1>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0.4, 0.4, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_1" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_1>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_1>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+            def PhysicsRevoluteJoint "front_left_leg_2" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot_1>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_2>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_2" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_2>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_2>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+             //modified code
+            def PhysicsRevoluteJoint "front_left_leg_3" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot_2>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_3>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_3" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_3>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_3>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+            def PhysicsRevoluteJoint "front_left_leg_4" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot_3>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_4>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_4" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_4>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_4>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+
+            //modified code
+            def PhysicsRevoluteJoint "front_left_leg_5" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot_4>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_5>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_5" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_5>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_5>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+
+            //modified code
+            def PhysicsRevoluteJoint "front_left_leg_6" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_foot_5>
+                rel physics:body1 = </Root/ant_instanceable/front_left_leg_6>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, 0, -0.7071068, 0)
+                quatf physics:localRot1 = (0.7071068, 0, -0.7071068, 0)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+
+            //modified code
+             def PhysicsRevoluteJoint "front_left_foot_6" (
+                apiSchemas = ["PhysxLimitAPI:angular", "PhysxJointAPI"]
+            )
+            {
+                uniform token physics:axis = "X"
+                rel physics:body0 = </Root/ant_instanceable/front_left_leg_6>
+                rel physics:body1 = </Root/ant_instanceable/front_left_foot_6>
+                float physics:breakForce = 3.4028235e38
+                float physics:breakTorque = 3.4028235e38
+                point3f physics:localPos0 = (0.2, 0.2, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.38268334, 0, 0, 0.9238796)
+                quatf physics:localRot1 = (0.38268334, 0, 0, 0.9238796)
+                float physics:lowerLimit = -10
+                float physics:upperLimit = 10
+                float physxJoint:armature = 0.01
+                float physxLimit:angular:damping = 0.1 (
+                    allowedTokens = []
+                )
+            }
+        }
+
+        //modify this one
+        def Xform "front_left_foot" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0.4, 0.4, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_3" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_3"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        //modify this one
+        def Xform "front_left_foot_1" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0.8, 0.8, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_4" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_4" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_4"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_4"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+        
+
+        //modify this one
+        def Xform "front_left_foot_2" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (1.2, 1.2, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_5" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_5" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_5"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_5"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+        
+
+
+        //modify this one
+        def Xform "front_left_foot_3" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (1.6, 1.6, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_6" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_6" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_6"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_6"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+         //modify this one
+        def Xform "front_left_foot_4" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (2.0, 2.0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_7" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_7" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_7"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_7"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+         //modify this one
+        def Xform "front_left_foot_5" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (2.4, 2.4, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_8" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_8" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    uniform token physics:approximation = "convexHull"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_8"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+
+                def Capsule "aux_1_geom_8"
+                {
+                    uniform token axis = "X"
+                    float3[] extent = [(-0.22142136, -0.08, -0.08), (0.22142136, 0.08, 0.08)]
+                    double height = 0.2828427255153656
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.07999999821186066
+                    matrix4d xformOp:transform = ( (0.7071067450934194, 0.7071068030891894, 0, 0), (-0.7071068030891894, 0.7071067450934194, 0, 0), (0, 0, 1, 0), (0.10000000149011612, 0.10000000149011612, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+
+
+        //modify this one
+        def Xform "front_left_foot_6" (
+            apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxArticulationForceSensorAPI"]
+        )
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            float physics:density = 5
+            vector3f physics:velocity = (0, 0, 0)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (2.8, 2.8, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "collisions" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_9" (
+                    apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    uniform token physics:approximation = "boundingSphere"
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    uniform token purpose = "guide"
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+
+            def "visuals" (
+                instanceable = true
+            )
+            {
+                def Sphere "torso_geom_9"
+                {
+                    float3[] extent = [(-0.25, -0.25, -0.25), (0.25, 0.25, 0.25)]
+                    color3f[] primvars:displayColor = [(0.97, 0.38, 0.06)]
+                    double radius = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+                }
+            }
+        }
+    }
+}
+
