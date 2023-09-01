@@ -1,0 +1,112 @@
+#use isaac sim to create a scene
+
+from omni.isaac.examples.base_sample import BaseSample
+import numpy as np
+# Can be used to create a new cube or to point to an already existing cube in stage.
+from omni.isaac.core.objects import DynamicSphere
+from omni.isaac.core.objects import DynamicCuboid
+#from omni.isaac.core.usd import USDScene, create_stage, SdfPath
+from omni.isaac.core.utils.stage import add_reference_to_stage
+
+class HelloWorld(BaseSample):
+    def __init__(self) -> None:
+        super().__init__()
+        return
+
+    def setup_scene(self):
+        world = self.get_world()
+        world.scene.add_default_ground_plane()
+        
+        usd_path = "C:\\Users\\stude\\Desktop\\isaac_sim-2022.2.1\\snake_instance_20.usd"
+
+        snake = add_reference_to_stage(usd_path=usd_path, prim_path="/World/Snake")
+        snake.scale = np.array([2.0, 2.0, 2.0])
+        
+        
+        # Create the bottom cuboid
+        outer_cube_position = np.array([0, 0, 1.0])  # Adjust the position of the outer cuboid
+        outer_cube_scale = np.array([20.0, 10.0, 1.0])  # Adjust the scale of the outer cuboid
+        outer_cube_color = np.array([1.0, 0, 0])  # Adjust the color of the outer cuboid
+
+        outer_cuboid = world.scene.add(
+            DynamicCuboid(
+                prim_path="/World/outer_cuboid",
+                name="outer_cuboid",
+                position=outer_cube_position,
+                scale=outer_cube_scale,
+                color=outer_cube_color,
+            ))
+        
+        # Create the west cuboid
+        outer1_cube_position = np.array([10.5, 0, 10.0])  # Adjust the position of the outer cuboid
+        outer1_cube_scale = np.array([1.0, 10.0, 20.0])  # Adjust the scale of the outer cuboid
+        outer1_cube_color = np.array([0, 0, 1.0])  # Adjust the color of the outer cuboid
+
+        outer_cuboid_1 = world.scene.add(
+            DynamicCuboid(
+                prim_path="/World/outer_cuboid_1",
+                name="outer_cuboid_1",
+                position=outer1_cube_position,
+                scale=outer1_cube_scale,
+                color=outer1_cube_color,
+            ))
+        
+        # Create the east cuboid
+        outer2_cube_position = np.array([-10.5, 0, 10.0])  # Adjust the position of the outer cuboid
+        outer2_cube_scale = np.array([1.0, 10.0, 20.0])  # Adjust the scale of the outer cuboid
+        outer2_cube_color = np.array([1.0, 0, 0])  # Adjust the color of the outer cuboid
+
+        outer_cuboid_2 = world.scene.add(
+            DynamicCuboid(
+                prim_path="/World/outer_cuboid_2",
+                name="outer_cuboid_2",
+                position=outer2_cube_position,
+                scale=outer2_cube_scale,
+                color=outer2_cube_color,
+            ))
+        
+        # Create the south cuboid
+        outer3_cube_position = np.array([0, 5.5, 10.0])  # Adjust the position of the outer cuboid
+        outer3_cube_scale = np.array([20.0, 1.0, 20.0])  # Adjust the scale of the outer cuboid
+        outer3_cube_color = np.array([0, 1.0, 0])  # Adjust the color of the outer cuboid
+
+        outer_cuboid_3 = world.scene.add(
+            DynamicCuboid(
+                prim_path="/World/outer_cuboid_3",
+                name="outer_cuboid_3",
+                position=outer3_cube_position,
+                scale=outer3_cube_scale,
+               color=outer3_cube_color,
+           ))
+        
+        # Create the north cuboid
+        outer4_cube_position = np.array([0, -5.5, 10.0])  # Adjust the position of the outer cuboid
+        outer4_cube_scale = np.array([20.0, 1.0, 20.0])  # Adjust the scale of the outer cuboid
+        outer4_cube_color = np.array([0, 1.0, 0])  # Adjust the color of the outer cuboid
+
+        outer_cuboid_4 = world.scene.add(
+            DynamicCuboid(
+                prim_path="/World/outer_cuboid_4",
+               name="outer_cuboid_4",
+                position=outer4_cube_position,
+                scale=outer4_cube_scale,
+                color=outer4_cube_color,
+            ))
+        
+
+        num_spheres=200
+
+        for i in range(num_spheres):
+            position = np.array([0, np.random.uniform(-1, 1), i + 1.0])
+            color = np.array([0.7, 0.7, 0.7])
+            
+            fancy_sphere = world.scene.add(
+                DynamicSphere(
+                    prim_path=f"/World/random_sphere_{i}", # The prim path of the cube in the USD stage
+                    name=f"fancy_sphere_{i}", # The unique name used to retrieve the object from the scene later on
+                    position=position, # Using the current stage units which is in meters by default.
+                    radius=0.4015, # most arguments accept mainly numpy arrays.
+                    color=color, # RGB channels, going from 0-1
+                ))
+
+        return
